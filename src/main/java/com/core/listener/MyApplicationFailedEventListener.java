@@ -21,6 +21,6 @@ public class MyApplicationFailedEventListener implements ApplicationListener<App
 	
 	/*处理异常*/
 	private void handleThrowable(Throwable throwable) {
-		logger.info("发送异常了，可以给运维人员发个邮件什么的1");
+		logger.info("发送异常了，可以给运维人员发个邮件什么的");
 	}
 }
