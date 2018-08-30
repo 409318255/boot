@@ -72,6 +72,22 @@
         </pluginRepository>
     </pluginRepositories>
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>config/local/**</exclude>
+                    <exclude>config/uat/**</exclude>
+                    <exclude>config/online/**</exclude>
+                    <exclude>config/jc/**</exclude>
+                    <exclude>config/zc/**</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <targetPath>${basedir}/target/classes/config</targetPath>
+                <directory>src/main/resources/config/${profiles.active}</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -93,4 +109,39 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <profiles.active>local</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <profiles.active>uat</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>online</id>
+            <properties>
+                <profiles.active>online</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>zc</id>
+            <properties>
+                <profiles.active>zc</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>jc</id>
+            <properties>
+                <profiles.active>jc</profiles.active>
+            </properties>
+        </profile>
+    </profiles>
 </project>

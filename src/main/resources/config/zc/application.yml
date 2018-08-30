@@ -1,3 +1,4 @@
+ # 自测
 logging:
   path: D:\\log
   level: info
