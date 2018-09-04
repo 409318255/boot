@@ -1,7 +1,6 @@
  # 集成
-logging:
-  path: D:\\log
-  level: info
+ logging:
+    config: classpath:config/logback-spring.xml
 spring:
     datasource:
         name: test

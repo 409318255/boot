@@ -1,7 +1,6 @@
  # 自测
 logging:
-  path: D:\\log
-  level: info
+    config: classpath:config/logback-spring.xml
 spring:
     datasource:
         name: test
